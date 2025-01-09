@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+    env {
+        JOB_NAME = "Sample Job"
+    }
+    stages {
+        stage('Environment Variables') {
+            steps {
+                echo  "JOB_NAME =  ${JOB_NAME}"
+            }
+        }
+        stage('currentBuild Variables') {
+            steps {
+                echo  "currentBuild.absoluteUrl              =  ${currentBuild.absoluteUrl}"
+                echo  "currentBuild.buildVariables           =  ${currentBuild.buildVariables}"
+                echo  "currentBuild.currentResult            =  ${currentBuild.currentResult}"
+                echo  "currentBuild.description              =  ${currentBuild.description}"
+                echo  "currentBuild.displayName              =  ${currentBuild.displayName}"
+                echo  "currentBuild.duration                 =  ${currentBuild.duration}"
+                echo  "currentBuild.durationString           =  ${currentBuild.durationString}"
+                echo  "currentBuild.fullDisplayName          =  ${currentBuild.fullDisplayName}"
+                echo  "currentBuild.fullProjectName          =  ${currentBuild.fullProjectName}"
+                echo  "currentBuild.id                       =  ${currentBuild.id}"
+                echo  "currentBuild.keepLog                  =  ${currentBuild.keepLog}"
+                echo  "currentBuild.nextBuild                =  ${currentBuild.nextBuild}"
+                echo  "currentBuild.number                   =  ${currentBuild.number}"
+                echo  "currentBuild.previousBuild            =  ${currentBuild.previousBuild}"
+                echo  "currentBuild.previousBuildInProgress  =  ${currentBuild.previousBuildInProgress}"
+                echo  "currentBuild.previousBuiltBuild       =  ${currentBuild.previousBuiltBuild}"
+                echo  "currentBuild.previousCompletedBuild   =  ${currentBuild.previousCompletedBuild}"
+                echo  "currentBuild.previousFailedBuild      =  ${currentBuild.previousFailedBuild}"
+                echo  "currentBuild.previousNotFailedBuild   =  ${currentBuild.previousNotFailedBuild}"
+                echo  "currentBuild.previousSuccessfulBuild  =  ${currentBuild.previousSuccessfulBuild}"
+                echo  "currentBuild.projectName              =  ${currentBuild.projectName}"
+                echo  "currentBuild.result                   =  ${currentBuild.result}"
+                echo  "currentBuild.startTimeInMillis        =  ${currentBuild.startTimeInMillis}"
+                echo  "currentBuild.timeInMillis             =  ${currentBuild.timeInMillis}"
+                echo  "currentBuild.upstreamBuilds           =  ${currentBuild.upstreamBuilds}"
+            }
+        }
+    }
+}
